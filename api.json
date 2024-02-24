@@ -58,3 +58,187 @@ CREATE TABLE my_table (
     status TEXT
 );
 
+CREATE TABLE orders (
+    company_id TEXT,
+    delivery_fee INTEGER,
+    delivery_id TEXT,
+    delivery_selectedBy TEXT,
+    from_company TEXT,
+    invitetion_id TEXT,
+    receiver_lat REAL,
+    receiver_lon REAL,
+    sender_lat REAL,
+    sender_lon REAL,
+    order_accepted TEXT,
+    order_code TEXT,
+    order_date TEXT,
+    order_message TEXT,
+    order_status TEXT,
+    payment_method INTEGER,
+    phone_expected TEXT,
+    receiver_address TEXT,
+    receiver_id TEXT,
+    receiver_message TEXT,
+    sender_id TEXT,
+    sender_phone TEXT,
+    service_fee INTEGER,
+    to_address TEXT,
+    visible INTEGER
+);
+
+CREATE TABLE order_items (
+    order_id INTEGER,
+    order_image TEXT,
+    order_name TEXT,
+    order_quantity INTEGER,
+    order_description TEXT
+);
+
+// jspn format of 
+
+data = {
+    "company-id": "73237djsgdhj",
+    "delivery_fee": 120,
+    "delivery_id": "",
+    "delivery_selectedBy": "delivery selected by sender",
+    "from-company": "yeneDelivery",
+    "invitetion_id": "6rYXNTv3PtUKOUra9bXR81xOaTx1",
+    "location": {
+    "receiver_lat": 9.0412854,
+    "receiver_lon": 38.7301093,
+    "sender_lat": 8.5629551,
+    "sender_lon": 39.2869448
+    },
+    "order-accepted": "34/897q8q6",
+    "order-code": "001341bc-3572-4a9b-8f64-5d88c7772c4f",
+    "order-date": "2024-02-17 16:03:21.695682",
+    "order_accepted": "2024-02-18 09:59:52.338227",
+    "order_message": "order detail",
+    "order_status": "accepted",
+    "order-items": [
+    {
+    "order-image": "go",
+    "order-name": "burger",
+    "order-quantity": 12,
+    "order_description": "burger"
+    },
+    {
+    "order-image": "go",
+    "order-name": "sandwich",
+    "order-quantity": 12,
+    "order_description": "sandwich burger"
+    },
+    {
+    "order-image": "no",
+    "order-name": "salad",
+    "order-quantity": 12,
+    "order_description": "burger salad"
+    }
+    ],
+    "payment-method": 1,
+    "phone_expected": "0988107722",
+    "receiver_address": "hadya",
+    "receiver_id": "RPHg9omKqWXPlLKcXrIztIDMYCR2",
+    "receiver_message": "accepted",
+    "sender_id": "RPHg9omKqWXPlLKcXrIztIDMYCR2",
+    "sender_phone": "0988107722",
+    "service_fee": 12,
+    "to": "Yared pk",
+    "visible": False,
+    }
+
+    INSERT INTO orders (company_id, delivery_fee, delivery_id, delivery_selectedBy, from_company, invitetion_id, receiver_lat, receiver_lon, sender_lat, sender_lon, order_accepted, order_code, order_date, order_message, order_status, payment_method, phone_expected, receiver_address, receiver_id, receiver_message, sender_id, sender_phone, service_fee, to_address, visible)
+VALUES (
+    '73237djsgdhj',
+    120,
+    '',
+    'delivery selected by sender',
+    'yeneDelivery',
+    '6rYXNTv3PtUKOUra9bXR81xOaTx1',
+    9.0412854,
+    38.7301093,
+    8.5629551,
+    39.2869448,
+    '2024-02-18 09:59:52.338227',
+    '001341bc-3572-4a9b-8f64-5d88c7772c4f',
+    '2024-02-17 16:03:21.695682',
+    'order detail',
+    'accepted',
+    1,
+    '0988107722',
+    'hadya',
+    'RPHg9omKqWXPlLKcXrIztIDMYCR2',
+    'accepted',
+    'RPHg9omKqWXPlLKcXrIztIDMYCR2',
+    12,
+    'Yared pk',
+    0
+);
+
+    INSERT INTO order_items (order_id, order_image, order_name, order_quantity, order_description)
+VALUES
+    (1, 'go', 'burger', 12, 'burger'),
+    (1, 'go', 'sandwich', 12, 'sandwich burger'),
+    (1, 'no', 'salad', 12, 'burger salad');
+
+    // driver json info
+    {
+        "date_created": 1676636000000,
+        "delivery_id": "6rYXNTv3PtUKOUra9bXR81xOaTx1",
+        "delivery_type": "car",
+        "delivery_type_id": "563222AA",
+        "email": "dv11@gmail.com",
+        "end": "",
+        "end_destination": "",
+        "full_name": "yared",
+        "last_update": 1676642829000,
+        "location": {
+          "lat": 9.0465283,
+          "lon": 38.7237248
+        },
+        "phone": "0988107722",
+        "profile": "",
+        "rate": 4,
+        "start": "",
+        "status": false
+      }
+
+      // create table 
+      CREATE TABLE my_table (
+    date_created BIGINT,
+    delivery_id TEXT,
+    delivery_type TEXT,
+    delivery_type_id TEXT,
+    email TEXT,
+    end TEXT,
+    end_destination TEXT,
+    full_name TEXT,
+    last_update BIGINT,
+    location_lat REAL,
+    location_lon REAL,
+    phone TEXT,
+    profile TEXT,
+    rate INTEGER,
+    start TEXT,
+    status BOOLEAN
+);
+
+INSERT INTO my_table (date_created, delivery_id, delivery_type, delivery_type_id, email, end, end_destination, full_name, last_update, location_lat, location_lon, phone, profile, rate, start, status)
+VALUES (
+    1676636000000,
+    '6rYXNTv3PtUKOUra9bXR81xOaTx1',
+    'car',
+    '563222AA',
+    'dv11@gmail.com',
+    '',
+    '',
+    'yared',
+    1676642829000,
+    9.0465283,
+    38.7237248,
+    '0988107722',
+    '',
+    4,
+    '',
+    false
+);
