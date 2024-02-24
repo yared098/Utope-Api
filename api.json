@@ -1,0 +1,60 @@
+Utope Api structure
+
+
+
+User json 
+{
+  "Address": "",
+  "about": "our company is",
+  "company_type": 1,
+  "date_created": "2024-01-24 22:30:04.498758",
+  "email": "usse1@gmail.com",
+  "full_name": "Guest user",
+  "location": {
+    "lat": "0",
+    "lon": "0"
+  },
+  "phone": "0988107722",
+  "status": false,
+  "telegram_id": "",
+  "user_id": "2nrDssxWWzWl8w50s"
+}
+
+//  
+Create table   user 
+CREATE TABLE my_table (
+    Address TEXT,
+    about TEXT,
+    company_type INTEGER,
+    date_created TEXT,
+    email TEXT,
+    full_name TEXT,
+    location_lat TEXT,
+    location_lon TEXT,
+    phone TEXT,
+    status BOOLEAN,
+    telegram_id TEXT,
+    user_id TEXT
+);
+        
+Invitation json 
+{
+  "date": 1676642295000,
+  "end_destination": "shashemene",
+  "order_code": "dbe7ee04-e07d-4a3d-8f1c-33b3b5a4f050",
+  "receiver_id": "6rYXNTv3PtUKOUra9bXR81xOaTx1",
+  "sender_id": "RPHg9omKqWXPlLKcXrIztIDMYCR2",
+  "start_destination": "hawasa",
+  "status": "accepted"
+}
+  Invitation create table 
+CREATE TABLE my_table (
+    date BIGINT,
+    end_destination TEXT,
+    order_code TEXT,
+    receiver_id TEXT,
+    sender_id TEXT,
+    start_destination TEXT,
+    status TEXT
+);
+
